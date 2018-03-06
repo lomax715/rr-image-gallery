@@ -1,9 +1,13 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import promiseMiddleware from './promiseMiddleware';
+import { images } from '../components/image/reducer';
+import { loading, error } from '../components/app/reducers';
 
 const reducer = combineReducers({
-  //place reducers
+  images,
+  loading,
+  error
 });
 
 
