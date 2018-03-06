@@ -1,11 +1,13 @@
 import { applyMiddleware, createStore, combineReducers, compose } from 'redux';
 import thunk from 'redux-thunk';
-import { image } from './src/components/images/reducers';
+import { image } from './components/images/reducers';
+import { loading } from './components/app/reducers';
 import promiseMiddleware from './promiseMiddleware';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const reducer = combineReducers({
-  image
+  image,
+  loading
 });
 
 const store = createStore(

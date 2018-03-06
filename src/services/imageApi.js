@@ -22,13 +22,15 @@ const URL = 'https://image-gallery-server.herokuapp.com/api';
 //   "_id": "5a9ec831d22df00021b2c649",
 //   "id": "5a9ec831d22df00021b2c649"
 // }
+const albumId = '5a9ec831d22df00021b2c649'
 
 function load(albumId){
-  return fetch(`${URL}/${albumId}`)
+  return fetch(`${URL}/albums/${albumId}`)
     .then(response => response.json());
 }
 
 function addImage(imgObj){
+  imgObj.album = albumId;
   return fetch(`${URL}/images`, {
     method: 'POST',
     body: JSON.stringify(imgObj),

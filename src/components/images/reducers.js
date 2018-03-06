@@ -5,7 +5,7 @@ export const IMAGE_DELETE = 'IMAGE_DELETE';
 export function image(state = [], { type, payload }){
   switch(type){
     case IMAGE_LOAD:
-      return payload;
+      return payload.images;
 
     case IMAGE_ADD:
       return [
