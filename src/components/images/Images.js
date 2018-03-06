@@ -15,7 +15,6 @@ class Images extends Component {
 
     return (
       <div>
-        <h1>IMAGES</h1>
         <AddImageForm id={id} onEdit={addImage}/>
         <ul>
           {image.map(image => <Image key={image.id} {...image}/>)}
