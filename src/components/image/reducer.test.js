@@ -1,4 +1,5 @@
-import { images, IMAGE_ADD, IMAGE_REMOVE, IMAGE_LOAD } from './reducers';
+import { images, IMAGE_ADD, IMAGE_REMOVE } from './reducers';
+import { ALBUM_LOAD } from '../album/reducers';
 
 const imageToAdd = {
   id: 111,
@@ -13,7 +14,7 @@ it('loads images', () => {
     imageToAdd,
     { id: 121, title: 'sneakers', url: 'nope.jpg', album: 123, description: 'swampy' }
   ] };
-  const state = images([], { type: IMAGE_LOAD, payload: imagesToLoad });
+  const state = images([], { type: ALBUM_LOAD, payload: imagesToLoad });
   expect(state).toEqual(imagesToLoad.images);
 });
 

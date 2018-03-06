@@ -1,8 +1,9 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addImage, loadImages } from './actions';
 import Image from './Image';
 import ImageForm from './ImageForm';
+import './images.css';
 
 class Images extends Component {
   
@@ -18,13 +19,12 @@ class Images extends Component {
     const { images, addImage } = this.props;
     
     return (
-      <Fragment>
-        <h1>Album Name Placeholder</h1>
+      <div className="images-box">
         <ImageForm onComplete={addImage}/>
         <ul className="images">
           {images.map(image => <Image key={image.id} {...image}/>)}
         </ul>
-      </Fragment>
+      </div>
     );
   }
 }

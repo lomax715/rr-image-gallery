@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removeImage } from './actions';
+import './image.css';
 
 class Image extends Component {
 
@@ -10,6 +11,7 @@ class Image extends Component {
 
     return (
       <li className="image">
+        <h2>{title}</h2>
         <figure>
           <img src={url} alt={title}/>
           <figcaption>{description}</figcaption>

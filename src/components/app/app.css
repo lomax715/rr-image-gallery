@@ -20,8 +20,14 @@
   transform: translate(-50%, -50%);
 }
 
+#main {
+  width: 80%;
+  margin: 0 auto;
+}
+
 #footer {
   text-align: center;
+  margin-top: 1rem;
   ul {
     display: flex;
     justify-content: center;

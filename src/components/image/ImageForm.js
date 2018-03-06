@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './imageForm.css';
 
 export default class ImageForm extends Component {
 
@@ -31,7 +32,7 @@ export default class ImageForm extends Component {
     const { url, description, title } = this.state;
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className="image-form">
         <fieldset>
           <legend className="clip">Add an Image</legend>
 
@@ -46,8 +47,8 @@ export default class ImageForm extends Component {
           <label htmlFor="description"> Description:
           <textarea name="description" value={description} placeholder="Say something about the image..." onChange={this.handleChange}/>
           </label>
-          <button type="submit">Add</button>
         </fieldset>
+        <button type="submit">Add</button>
 
       </form>
     );
