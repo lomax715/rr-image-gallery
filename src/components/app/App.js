@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import './app.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+import Images from '../image/Images';
 
 
-export default class App extends Component {
+class App extends Component {
 
-  state = {
-
-  };
 
   render() {
+    const { loading, error } = this.props;
     
     return (
       <Router>
@@ -19,7 +19,7 @@ export default class App extends Component {
           </header>
           <main id="main" role="main">
             <Switch>
-              {/* <Route exact path="/" component={Dashboard}/> */}
+              {/* <Route exact path="/" component={Images}/> */}
               <Redirect to="/"/>
             </Switch>
           </main>
@@ -51,3 +51,11 @@ export default class App extends Component {
     );
   }
 }
+
+export default connect(
+  state => ({
+    loading: state.loading,
+    error: state.error
+  }),
+  null
+)(App);

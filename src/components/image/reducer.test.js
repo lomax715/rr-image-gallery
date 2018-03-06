@@ -1,4 +1,4 @@
-import { images, IMAGE_ADD, IMAGE_REMOVE, IMAGE_LOAD } from './reducer';
+import { images, IMAGE_ADD, IMAGE_REMOVE, IMAGE_LOAD } from './reducers';
 
 const imageToAdd = {
   id: 111,
