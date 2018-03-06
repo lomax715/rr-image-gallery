@@ -5,7 +5,7 @@ export const IMAGE_LOAD = 'IMAGE_LOAD';
 export function images(state = [], { type, payload }) {
   switch(type) {
     case IMAGE_LOAD: 
-      return payload;
+      return payload.images;
     case IMAGE_ADD:
       return [
         ...state,

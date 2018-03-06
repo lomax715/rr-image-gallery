@@ -9,12 +9,12 @@ const imageToAdd = {
 };
 
 it('loads images', () => {
-  const imagesToLoad = [
+  const imagesToLoad = { images: [
     imageToAdd,
     { id: 121, title: 'sneakers', url: 'nope.jpg', album: 123, description: 'swampy' }
-  ];
+  ] };
   const state = images([], { type: IMAGE_LOAD, payload: imagesToLoad });
-  expect(state).toEqual(imagesToLoad);
+  expect(state).toEqual(imagesToLoad.images);
 });
 
 it('default empty array', () => {

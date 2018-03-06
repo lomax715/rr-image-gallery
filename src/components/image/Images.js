@@ -15,12 +15,11 @@ class Images extends Component {
   }
 
   render() {
-    const { album, addImage, albumName } = this.props;
-    const { images } = album; // issue with returned data is object, expecting an array
-    console.log(album);
+    const { images, addImage } = this.props;
+    
     return (
       <Fragment>
-        <h1>{albumName}</h1>
+        <h1>Album Name Placeholder</h1>
         <ImageForm onComplete={addImage}/>
         <ul className="images">
           {images.map(image => <Image key={image.id} {...image}/>)}
@@ -31,6 +30,6 @@ class Images extends Component {
 }
 
 export default connect(
-  state => ({ album: state.images }),
+  state => ({ images: state.images }),
   { addImage, loadImages }
 )(Images);

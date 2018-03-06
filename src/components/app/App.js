@@ -3,6 +3,8 @@ import './app.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import Images from '../image/Images';
+import { SyncLoader } from 'react-spinners';
+import Error from './Error';
 
 
 class App extends Component {
@@ -15,7 +17,10 @@ class App extends Component {
       <Router>
         <div id="container">
           <header id="header">
-            <h1></h1>
+            <div id="loader">
+              <SyncLoader loading={loading}/>
+            </div>
+            { error && <Error error={error}/> }
           </header>
           <main id="main" role="main">
             <Switch>
