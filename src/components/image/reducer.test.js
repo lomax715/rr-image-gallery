@@ -1,1 +1,1 @@
-import { images, IMAGE_ADD, IMAGE_REMOVE, IMAGE_UPDATE, IMAGE_LOAD } from './reducers';
+import { images, IMAGE_ADD, IMAGE_REMOVE, IMAGE_LOAD } from './reducers';
