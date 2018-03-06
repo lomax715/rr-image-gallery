@@ -12,7 +12,9 @@ class Album extends Component {
     return (
       <li className="album-li">
         <div>
-          <img src={url} alt={title}/>
+          <div className="img-contain">
+            <img src={url} alt={title}/>
+          </div>
           <h3>{title}</h3>
           <p>{description}</p>
           <button onClick={() => removeAlbum(id)}>✖</button>

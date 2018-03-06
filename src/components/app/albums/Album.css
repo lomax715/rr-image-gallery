@@ -1,0 +1,24 @@
+@import '../../../styles/variables.css';
+
+.img-contain {
+  overflow: hidden;
+  position: relative;
+  max-width: 500px;
+  height: 500px;
+
+  img {
+    position: absolute;
+  }
+}
+
+
+
+.album-ul {
+  list-style-type: none;
+  padding: 0;
+  display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 2rem;
+}
+
+.album-li {}
