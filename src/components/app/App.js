@@ -19,7 +19,7 @@ class App extends Component {
           </header>
           <main id="main" role="main">
             <Switch>
-              {/* <Route exact path="/" component={Images}/> */}
+              <Route exact path="/" component={Images}/>
               <Redirect to="/"/>
             </Switch>
           </main>

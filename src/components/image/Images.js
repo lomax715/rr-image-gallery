@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import { addImage, loadImages } from './actions';
 import Image from './Image';
-import ImageForm from '../common/ImageForm';
+import ImageForm from './ImageForm';
 
 class Images extends Component {
   
@@ -15,7 +15,9 @@ class Images extends Component {
   }
 
   render() {
-    const { images, addImage, albumName } = this.props;
+    const { album, addImage, albumName } = this.props;
+    const { images } = album; // issue with returned data is object, expecting an array
+    console.log(album);
     return (
       <Fragment>
         <h1>{albumName}</h1>
@@ -29,6 +31,6 @@ class Images extends Component {
 }
 
 export default connect(
-  state => ({ images: state.images }),
+  state => ({ album: state.images }),
   { addImage, loadImages }
 )(Images);

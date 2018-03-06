@@ -1,4 +1,4 @@
-import { IMAGE_ADD, IMAGE_REMOVE, IMAGE_LOAD } from './reducer';
+import { IMAGE_ADD, IMAGE_REMOVE, IMAGE_LOAD } from './reducers';
 import galleryApi from '../../services/galleryApi';
 
 const album = '5a9defd1525d4500212b810a';
