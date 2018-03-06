@@ -1,6 +1,6 @@
 import { applyMiddleware, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
-import { albums } from './components/album/reducers';
+import { albums } from '../components/album/reducers';
 
 const async = store => next => action => {
   if(typeof action === 'function') {
