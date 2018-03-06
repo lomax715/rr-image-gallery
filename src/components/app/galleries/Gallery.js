@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Gallery.css';
-// import { updateCategory, removeCategory } from './actions';
+import { updateGallery, removeGallery } from './actions';
 
 class Gallery extends Component {
 
