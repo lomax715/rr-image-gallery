@@ -1,1 +1,1 @@
-### Gallery App by Ivan Limongan
+### Album App by Ivan Limongan
