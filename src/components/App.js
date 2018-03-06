@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './app.css';
-import AddImage from './image/AddImage';
+import AddImage from './album/AddImage';
 
 export default class App extends Component {
 
