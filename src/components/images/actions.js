@@ -11,13 +11,13 @@ export function loadImages(albumId){
 export function addImage(imgObj){
   return {
     type: IMAGE_ADD,
-    payload: imageApi.addImage(imgObj)
+    payload: imageApi.add(imgObj)
   };
 }
 
 export function removeImage(imageId){
   return {
     type: IMAGE_DELETE,
-    payload: imageApi.removeImage(imageId).then(() => imageId)
+    payload: imageApi.remove(imageId).then(() => imageId)
   };
 }

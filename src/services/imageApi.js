@@ -29,7 +29,7 @@ function load(albumId){
     .then(response => response.json());
 }
 
-function addImage(imgObj){
+function add(imgObj){
   imgObj.album = albumId;
   return fetch(`${URL}/images`, {
     method: 'POST',
@@ -41,14 +41,14 @@ function addImage(imgObj){
   }).then(response => response.json());
 }
 
-function removeImage(imageId){
-  return fetch(`${URL}/${imageId}`, {
+function remove(imageId){
+  return fetch(`${URL}/images/${imageId}`, {
     method: 'DELETE'
-  }).then(response => response.json());
+  });
 }
 
 export default {
   load,
-  addImage,
-  removeImage
+  add,
+  remove
 };
