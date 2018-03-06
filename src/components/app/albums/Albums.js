@@ -21,7 +21,7 @@ class Albums extends Component {
     const { albums, addImage } = this.props;
     return (
       <section className="main-container maxwidth-wrap">
-        <div>
+        <div className="add-contain">
           <ImageForm onEdit={addImage}/>
         </div>
         <ul className="album-ul">

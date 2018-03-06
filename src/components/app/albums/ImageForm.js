@@ -34,7 +34,7 @@ export default class ImageForm extends Component {
 
     return (
       <form onSubmit = {this.handleSubmit} className="add-image">
-        <label htmlFor="title"> Title:
+        <label htmlFor="title"> Title: 
         <input required id="title" name="title" value={title} onChange={this.handleChange} placeholder="ex: Title"/>
         </label>
 
@@ -42,7 +42,7 @@ export default class ImageForm extends Component {
         <input required id="description" name="description" value={description} onChange={this.handleChange} placeholder="ex: Description"/>
         </label>
         
-        <label htmlFor="url"> Url:
+        <label htmlFor="url"> Url: 
         <input required id="url" name="url" value={url} onChange={this.handleChange} placeholder="ex: Url"/>
         </label>
         <button type="submit">Add</button>

@@ -13,14 +13,13 @@ class App extends Component {
     const { loading, error } = this.props;
     return (
       <div className="app">
-      
-        <p>{loading ? 'I am loading' : 'I am NOT loading'}</p>
-        
+
         <Router>
           <div>
             <Header/>
             <main role="main" id="main">
-
+            
+              <p>{loading ? 'I am loading' : 'I am NOT loading'}</p>
               { error && 
                 <pre style={{ color: 'red' }}>
                   {error.message 
