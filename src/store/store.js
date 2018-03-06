@@ -10,7 +10,6 @@ const reducer = combineReducers({
   albums,
   loading,
   error
-  // expensesByCategory
 });
 
 // async middleware

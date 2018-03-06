@@ -1,43 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Album.css';
-import { updateAlbum, removeAlbum } from './actions';
-import AlbumForm from './AlbumForm';
+import { removeAlbum } from './actions';
+// import AlbumForm from './AlbumForm';
 
 class Album extends Component {
 
-  state = {
-    editing: false
-  };
-
-  handleEdit = name => {
-    this.props.updateAlbum(name);
-    this.setState({ editing: false });
-  };
-
-  handleToggleEdit = () => {
-    this.setState(prev => ({
-      editing: !prev.editing
-    }));
-  };
-
   render() {
-    const { id, name } = this.props;
-    const { editing } = this.state;
+    const { id, description, url, title } = this.props;
 
     return (
       <li className="album-li">
         <div>
-          {editing ? 
-            <AlbumForm id={id} text={name} onEdit={this.handleEdit}/> :
-            <p><span className="category-title">{name}</span></p>
-          }
-          <div className="buttons">
-            <button onClick={this.handleToggleEdit}>
-              {editing ? 'cancel' : '✎'}
-            </button>
-            <button onClick={() => removeAlbum(id)}>✖</button>
-          </div>
+          <img src={url} alt={title}/>
+          <h3>{title}</h3>
+          <p>{description}</p>
+          <button onClick={() => removeAlbum(id)}>✖</button>
         </div>
       </li>
     );
@@ -46,5 +24,5 @@ class Album extends Component {
 
 export default connect(
   null,
-  { updateAlbum, removeAlbum }
+  { removeAlbum }
 )(Album);

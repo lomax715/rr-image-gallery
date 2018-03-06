@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './Album.css';
 import { connect } from 'react-redux';
-import { addAlbum, loadAlbum } from './actions';
-import AlbumForm from './AlbumForm';
+import { loadAlbum } from './actions';
+// import AlbumForm from './AlbumForm';
 import Album from './Album';
+
 
 class Albums extends Component {
 
@@ -17,12 +18,11 @@ class Albums extends Component {
   };
 
   render() { 
-    const { albums, addAlbum } = this.props;
-
+    const { albums } = this.props;
     return (
       <section className="main-container maxwidth-wrap">
         <div>
-          <AlbumForm onEdit={addAlbum}/>
+          {/* <AlbumForm onEdit={addAlbum}/> */}
         </div>
         <ul className="album-ul">
           {albums.map(album => <Album key={album.id} {...album}/>)}
@@ -35,5 +35,5 @@ class Albums extends Component {
 
 export default connect(
   state => ({ albums: state.albums }),
-  { addAlbum, loadAlbum }
+  { loadAlbum }
 )(Albums);

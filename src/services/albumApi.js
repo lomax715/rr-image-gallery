@@ -1,42 +1,40 @@
-const user = 'ivan';
-const URL = `https://image-gallery-server.herokuapp.com/api/${user}/album/`;
+const URL = 'https://image-gallery-server.herokuapp.com/api';
+const albumId = '5a9edd23d22df00021b2c654';
 
 const doFetch = (url, options = {}) => {
   return fetch(url, options)
     .then(response => {
       if(response.ok) return response.json();
-
-      return response.json().then(body => {
-        if(body.message) throw body.message;
-        if(body.error) throw body.error;
-        throw body;
-      });
+      
+      if(response.message) throw response.message;
+      if(response.error) throw response.error;
+      throw response;
     });
 };
 
 function load() {
-  return doFetch(URL);
+  return doFetch(`${URL}/albums/${albumId}`);
 }
 
-function add(album) {
-  return doFetch(URL, {
-    method: 'POST',
-    body: JSON.stringify(album),
-    headers: {
-      'content-type': 'application/json'
-    },
-  });
-}
+// function add(album) {
+//   return doFetch(URL, {
+//     method: 'POST',
+//     body: JSON.stringify(album),
+//     headers: {
+//       'content-type': 'application/json'
+//     },
+//   });
+// }
 
-function update(album) {
-  return doFetch(`${URL}/albums/${album.id}`, {
-    method: 'PUT',
-    body: JSON.stringify(album),
-    headers: {
-      'content-type': 'application/json'
-    },
-  });
-}
+// function update(album) {
+//   return doFetch(`${URL}/albums/${album.id}`, {
+//     method: 'PUT',
+//     body: JSON.stringify(album),
+//     headers: {
+//       'content-type': 'application/json'
+//     },
+//   });
+// }
 
 function remove(id) {
   return doFetch(`${URL}/albums/${id}`, {
@@ -46,7 +44,5 @@ function remove(id) {
 
 export default {
   load,
-  add,
-  update,
   remove
 };
