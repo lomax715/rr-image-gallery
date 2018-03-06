@@ -1,6 +1,8 @@
 import { IMAGE_ADD, IMAGE_REMOVE, IMAGE_LOAD } from './reducer';
 import galleryApi from '../../services/galleryApi';
 
+const album = '5a9defd1525d4500212b810a';
+
 export function loadImages() {
   return {
     type: IMAGE_LOAD,
@@ -8,10 +10,11 @@ export function loadImages() {
   };
 }
 
-export function addImage(note) {
+export function addImage(image) {
+  image.album = album;
   return {
     type: IMAGE_ADD,
-    payload: galleryApi.add(note)
+    payload: galleryApi.add(image)
   };
 }
 
