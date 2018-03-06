@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './app.css';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import Album from '../album/Album';
+import AlbumDetail from '../album/AlbumDetail';
 import { SyncLoader } from 'react-spinners';
 import Error from './Error';
 
@@ -24,7 +24,7 @@ class App extends Component {
           </header>
           <main id="main" role="main">
             <Switch>
-              <Route exact path="/" component={Album}/>
+              <Route exact path="/" component={AlbumDetail}/>
               <Redirect to="/"/>
             </Switch>
           </main>

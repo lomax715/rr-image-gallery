@@ -40,7 +40,7 @@ export default class ImageForm extends Component {
           <input name="title" value={title} onChange={this.handleChange} placeholder="Provocative Descriptor..."/>
           </label>
 
-          <label htmlFor="url"> url:
+          <label htmlFor="url"> Url:
           <input name="url" value={url} onChange={this.handleChange} placeholder="https://example.jpg"/>
           </label>
 

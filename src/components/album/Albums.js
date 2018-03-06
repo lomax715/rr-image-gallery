@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
-import { loadAlbum } from './actions';
+import { loadAlbums } from './actions';
 import Images from '../image/Images';
+import Album from './Album';
 
-class Album extends Component {
+class Albums extends Component {
   
   componentDidMount() {
     this.handleLoad();
@@ -14,19 +15,17 @@ class Album extends Component {
   }
 
   render() {
-    const { album } = this.props;
-    const { name } = album;
+    const { albums } = this.props;
     
     return (
       <Fragment>
-        <h1>{name}</h1>
-        <Images/>
+        {albums.map()}
       </Fragment>
     );
   }
 }
 
 export default connect(
-  state => ({ album: state.album }),
-  { loadAlbum }
-)(Album);
+  state => ({ album: state.albums }),
+  { loadAlbums }
+)(Albums);

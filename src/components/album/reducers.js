@@ -9,3 +9,12 @@ export function album(state = {}, { type, payload }) {
       return state;
   }
 }
+
+export function albums(state = [], { type, payload }) {
+  switch(type) {
+    case ALBUMS_LOAD:
+      return payload;
+    default:
+      return state;
+  }
+}
