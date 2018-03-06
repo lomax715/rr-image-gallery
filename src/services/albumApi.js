@@ -16,15 +16,15 @@ function load() {
   return doFetch(`${URL}/albums/${albumId}`);
 }
 
-// function add(album) {
-//   return doFetch(URL, {
-//     method: 'POST',
-//     body: JSON.stringify(album),
-//     headers: {
-//       'content-type': 'application/json'
-//     },
-//   });
-// }
+function add(image) {
+  return doFetch(`${URL}/images`, {
+    method: 'POST',
+    body: JSON.stringify(image),
+    headers: {
+      'content-type': 'application/json'
+    },
+  });
+}
 
 // function update(album) {
 //   return doFetch(`${URL}/albums/${album.id}`, {
@@ -37,12 +37,13 @@ function load() {
 // }
 
 function remove(id) {
-  return doFetch(`${URL}/albums/${id}`, {
+  return doFetch(`${URL}/images/${id}`, {
     method: 'DELETE',
   });
 }
 
 export default {
   load,
+  add,
   remove
 };

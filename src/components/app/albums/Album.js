@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import './Album.css';
-import { removeAlbum } from './actions';
+import { removeImage } from './actions';
 // import AlbumForm from './AlbumForm';
 
 class Album extends Component {
 
   render() {
-    const { id, description, url, title } = this.props;
+    const { id, description, url, title, removeImage } = this.props;
 
     return (
       <li className="album-li">
@@ -17,7 +17,7 @@ class Album extends Component {
           </div>
           <h3>{title}</h3>
           <p>{description}</p>
-          <button onClick={() => removeAlbum(id)}>✖</button>
+          <button onClick={() => removeImage(id)}>✖</button>
         </div>
       </li>
     );
@@ -26,5 +26,5 @@ class Album extends Component {
 
 export default connect(
   null,
-  { removeAlbum }
+  { removeImage }
 )(Album);

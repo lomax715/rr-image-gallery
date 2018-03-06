@@ -1,6 +1,6 @@
-// export const ALBUM_ADD = 'ALBUM_ADD';
+export const IMAGE_ADD = 'IMAGE_ADD';
 // export const ALBUM_UPDATE = 'ALBUM_UPDATE';
-export const ALBUM_REMOVE = 'ALBUM_REMOVE';
+export const IMAGE_REMOVE = 'IMAGE_REMOVE';
 export const ALBUM_LOAD = 'ALBUM_LOAD';
 
 export function albums(state = [], { type, payload }) {
@@ -9,13 +9,13 @@ export function albums(state = [], { type, payload }) {
     case ALBUM_LOAD:
       return payload.images;
 
-    // case ALBUM_ADD:
-    //   return [
-    //     ...state,
-    //     payload
-    //   ];
+    case IMAGE_ADD:
+      return [
+        ...state,
+        payload
+      ];
 
-    case ALBUM_REMOVE:
+    case IMAGE_REMOVE:
       return state.filter(album => album.id !== payload);
 
     // case ALBUM_UPDATE: {
