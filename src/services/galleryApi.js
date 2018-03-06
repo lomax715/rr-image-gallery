@@ -1,30 +1,41 @@
 const albumId = '5a9defd1525d4500212b810a';
 const URL = 'https://image-gallery-server.herokuapp.com/api';
 
+const doFetch = (url, options = {}) => {
+  return fetch(url, options)
+    .then(response => {
+      if(response.ok) return response.json();
+
+      return response.json().then(body => {
+        if(body.message) throw body.message;
+        if(body.error) throw body.error;
+        throw body;
+      });
+    });
+};
+
 function load() {
-  return fetch(`${URL}/albums/${albumId}`)
-    .then(response => response.json());
+  return doFetch(`${URL}/albums/${albumId}`);
 }
 
 function getAllAlbums() {
-  return fetch(`${URL}/albums`)
-    .then(response => response.json());
+  return doFetch(`${URL}/albums`);
 }
 
 function add(image) {
-  return fetch(`${URL}/images`, {
+  return doFetch(`${URL}/images`, {
     method: 'POST',
     body: JSON.stringify(image),
     headers: {
       'content-type': 'application/json'
     },
-  }).then(response => response.json());
+  });
 }
 
 function remove(id) {
-  return fetch(`${URL}/images/${id}`, {
+  return doFetch(`${URL}/images/${id}`, {
     method: 'DELETE'
-  }).then(response => response.json());
+  });
 }
 
 
