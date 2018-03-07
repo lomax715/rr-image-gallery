@@ -8,12 +8,6 @@ export function image(state = [], { type, payload }){
   switch(type){
     case IMAGE_LOAD:
       return payload.images;
-      
-    case ALBUM_LOAD:
-      return [
-        ...state,
-        payload
-      ];
 
     case IMAGE_ADD:
       return [
@@ -23,6 +17,18 @@ export function image(state = [], { type, payload }){
 
     case IMAGE_DELETE:
       return state.filter(image => image.id !== payload);
+
+    default:
+      return state;
+  }
+}
+
+export function album(state = [], { type }){
+  switch(type){
+    case ALBUM_LOAD:
+      return [
+        ...state,
+      ];
 
     default:
       return state;

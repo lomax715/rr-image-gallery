@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loadImages, addImage } from './actions';
+import { loadImages, addImage, loadAlbums } from './actions';
 import Image from './Image';
 import AddImageForm from '../form/addImageForm';
 
 class Images extends Component {
   
-  componentDidMount(){
-    this.props.loadImages('5a9ec831d22df00021b2c649');
-  }
+  // componentDidMount(){
+  //   //this.props.loadImages('5a9ec831d22df00021b2c649');
+  //   this.props.loadAlbums();
+  // }
 
   render(){
     const { image, addImage, id } = this.props;
@@ -26,5 +27,5 @@ class Images extends Component {
 
 export default connect(
   state => ({ image: state.image }),
-  { loadImages, addImage }
+  { loadImages, addImage, loadAlbums }
 )(Images);

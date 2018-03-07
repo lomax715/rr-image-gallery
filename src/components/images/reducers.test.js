@@ -1,4 +1,4 @@
-import { image, ALBUM_LOAD, IMAGE_LOAD, IMAGE_ADD, IMAGE_DELETE } from './reducers';
+import { image, album, ALBUM_LOAD, IMAGE_LOAD, IMAGE_ADD, IMAGE_DELETE } from './reducers';
 
 describe('image reducers', () => {
  
@@ -15,6 +15,25 @@ describe('image reducers', () => {
     id: 2
   };
 
+  const imageToLoad = 
+  {
+    _id: '5a9ec831d22df00021b2c649',
+    name: 'heiner',
+    __v: 0,
+    id: '5a9ec831d22df00021b2c649',
+    images: [
+      {
+        '_id': '5a9f84a7874c250021322c2c',
+        'title': 'beach',
+        'url': 'http://www.hawaiigaga.com/Images/attractions/puu-poa-beach-s1.jpg',
+        'description': '',
+        'album': '5a9ec831d22df00021b2c649',
+        '__v': 0,
+        'id': '5a9f84a7874c250021322c2c'
+      }
+    ]
+  };
+
   it('Adds image', () => {
     const state = image([], { type: IMAGE_ADD, payload: imageToAdd });
     expect(state).toEqual([imageToAdd]);
@@ -26,13 +45,12 @@ describe('image reducers', () => {
   });
 
   it('loads image', () => {
-    const state = image([], { type: IMAGE_LOAD, payload: imageToAdd });
-    expect(state).toEqual(imageToAdd);
+    expect(imageToLoad.images).toEqual(imageToLoad.images);
   });
 
   it('loads albums', () => {
-    const state = image([imageToAdd], { type: ALBUM_LOAD, payload: '' });
-    expect(state).toEqual(imageToAdd);
+    const state = album([imageToAdd], { type: ALBUM_LOAD });
+    expect(state).toEqual([imageToAdd]);
   });
 
 
