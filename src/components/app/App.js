@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import Albums from '../images/Albums';
 import Header from '../Header';
 import Loading from './Loading';
-//import AlbumDetails from '../images/AlbumDetails';
 import Images from '../images/Images';
 import './main.css';
 
