@@ -21,3 +21,4 @@ export function removeImage(imageId){
     payload: imageApi.remove(imageId).then(() => imageId)
   };
 }
+
