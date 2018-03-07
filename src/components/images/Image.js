@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { removeImage } from './actions';
 
+
 class Image extends Component{
   render() {
     const { title, url, description, id, removeImage } = this.props;

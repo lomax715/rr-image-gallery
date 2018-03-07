@@ -40,7 +40,7 @@ export function album(state = [], { type, payload }){
 const filterSelector = state => state.filter;
 const imageSelector = state => state.image;
 
-export const filteredImageSelectory = createSelector(
+export const filteredImageSelector = createSelector(
   [filterSelector, imageSelector]
 );
 
