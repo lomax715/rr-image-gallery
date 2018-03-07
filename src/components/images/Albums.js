@@ -13,17 +13,20 @@ class Albums extends Component {
   
   render(){
 
-    const { album } = this.props;
+    const { albums } = this.props;
     return (
 
       <ul>
-        {album.map((album => <Album key={album.id} {...album}/>))}
+        {albums.map((album => {
+          return <Album key={album.id} {...album}/>;
+        }))}
+
       </ul>
     );
   }
 }
 
 export default connect(
-  state => ({ album: state.album }),
+  state => ({ albums: state.album }),
   { loadAlbums }
 )(Albums);

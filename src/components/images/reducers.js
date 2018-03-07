@@ -28,7 +28,7 @@ export function album(state = [], { type, payload }){
     case ALBUM_LOAD:
       return [
         ...state,
-        payload
+        ...payload
       ];
 
     default:

@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 
 class Album extends Component{
   render() {
-    const { album } = this.props;
+    const { id, name } = this.props;
     return (
-      <li>
+      <li>{id}{name}
       </li>
     );
 
