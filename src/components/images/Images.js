@@ -6,10 +6,10 @@ import AddImageForm from '../form/addImageForm';
 
 class Images extends Component {
   
-  // componentDidMount(){
-  //   //this.props.loadImages('5a9ec831d22df00021b2c649');
-  //   this.props.loadAlbums();
-  // }
+  componentDidMount(){
+    this.props.loadImages(this.props.id);
+
+  }
 
   render(){
     const { image, addImage, id } = this.props;
@@ -26,6 +26,10 @@ class Images extends Component {
 }
 
 export default connect(
-  state => ({ image: state.image }),
+  (state, props) => ({ 
+    image: state.image,
+    album: state.album,
+    id: props.match.params.id
+  }),
   { loadImages, addImage, loadAlbums }
 )(Images);
