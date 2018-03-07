@@ -21,4 +21,4 @@ export default connect (
   state => state,
   { removeImage }
 
-)(Image)
+)(Image);

@@ -49,8 +49,8 @@ describe('image reducers', () => {
   });
 
   it('loads albums', () => {
-    const state = album([imageToAdd], { type: ALBUM_LOAD });
-    expect(state).toEqual([imageToAdd]);
+    const state = album([], { type: ALBUM_LOAD, payload: imageToLoad });
+    expect(state).toEqual([imageToLoad]);
   });
 
 

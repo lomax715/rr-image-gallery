@@ -23,11 +23,12 @@ export function image(state = [], { type, payload }){
   }
 }
 
-export function album(state = [], { type }){
+export function album(state = [], { type, payload }){
   switch(type){
     case ALBUM_LOAD:
       return [
         ...state,
+        payload
       ];
 
     default:
