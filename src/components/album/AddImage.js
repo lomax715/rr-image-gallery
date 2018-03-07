@@ -10,22 +10,41 @@ export default class AddImage extends Component {
       title: '',
       description: '',
       url: '',
-      ...props
     };
   }
 
+  handleSubmit = event => {
+    event.preventDefault();
+    this.props.onEdit({
+      ...this.state
+    });
+    this.setState({
+      title: '',
+      description: '',
+      url: ''
+    });
+  };
+
+  handleChange = ({ target }) => {
+    this.setState({ [target.name]: target.value });
+  };
+
   render() {
+    const { title, description, url } = this.state;
     return (
-      <form className="addImage">
+      <form onSubmit={this.handleSubmit} className="addImage">
         <label htmlFor="title">Image Title
-          <input name="title"/>
+        <input required id="title" value={title} onChange={this.handleChange}name="title"/>
         </label>
+
         <label htmlFor="description">Image Description
-          <input name="description"/>
+        <input required id="description" name="description" value={description} onChange={this.handleChange}/>
         </label>
+
         <label htmlFor="url">Image URL
-          <input name="url"/>
+        <input required id="url" name="url" value={url} onChange={this.handleChange}/>
         </label>
+        
         <button type="submit">Add</button>
       </form>
     );

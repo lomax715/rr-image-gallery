@@ -1,16 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './app.css';
-import Album from './album/Album';
-// import AddImage from './album/AddImage';
+import Albums from '../album/Albums';
 
-export default class App extends Component {
-
-  constructor(){
-    super();
-
-    this.state = {};
-
-  }
+class App extends Component {
   
   render() {
 
@@ -20,11 +13,18 @@ export default class App extends Component {
           <h1>Image Gallery</h1>
         </header>
         <main>
-          <Album/>
+          <Albums/>
         </main>
 
       </div>  
     );
   }
 }
+
+export default connect(
+  state => ({
+    loading: state.loading
+  }),
+  null
+)(App);
 

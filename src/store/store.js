@@ -1,22 +1,31 @@
-import { applyMiddleware, compose, createStore } from 'redux';
+import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
+import { loading } from '../components/app/reducers';
 import { albums } from '../components/album/reducers';
+import promiseMiddleware from './promiseMiddleware';
 
-const async = store => next => action => {
-  if(typeof action === 'function') {
-    action(store.dispatch, store.getState);
-  }
-  else {
-    return next(action);
-  }
-};
+const reducer = combineReducers({
+  albums,
+  loading
+});
+
+// const async = store => next => action => {
+//   if(typeof action === 'function') {
+//     action(store.dispatch, store.getState);
+//   }
+//   else {
+//     return next(action);
+//   }
+// };
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
-  albums,
+  reducer,
   composeEnhancers(
-    applyMiddleware(thunk)
+    applyMiddleware(
+      thunk,
+      promiseMiddleware)
   )
 );
 
