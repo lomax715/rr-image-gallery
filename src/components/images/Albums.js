@@ -7,8 +7,7 @@ import { loadAlbums } from './actions';
 class Albums extends Component {
 
   componentDidMount(){
-    //this.props.loadImages('5a9ec831d22df00021b2c649');
-    this.props.loadAlbums();
+    if(this.props.albums.length === 0) this.props.loadAlbums();
   }
   
   render(){
