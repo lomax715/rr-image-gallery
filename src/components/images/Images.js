@@ -5,11 +5,15 @@ import Image from './Image';
 import AddImageForm from '../form/addImageForm';
 
 class Images extends Component {
-  
+  state = {
+    editing: false
+  };
+
   componentDidMount(){
     this.props.loadImages(this.props.id);
-
+    }
   }
+
 
   render(){
     const { image, addImage, id } = this.props;

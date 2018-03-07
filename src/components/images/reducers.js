@@ -2,7 +2,8 @@ export const IMAGE_LOAD = 'IMAGE_LOAD';
 export const IMAGE_ADD = 'IMAGE_ADD';
 export const IMAGE_DELETE = 'IMAGE_DELETE';
 export const ALBUM_LOAD = 'ALBUM_LOAD';
-
+export const APPLY_FILTER = 'APPLY_FILTER';
+import { createSelector } from 'reselect';
 
 export function image(state = [], { type, payload }){
   switch(type){
@@ -31,6 +32,24 @@ export function album(state = [], { type, payload }){
         ...payload
       ];
 
+    default:
+      return state;
+  }
+}
+
+const filterSelector = state => state.filter;
+const imageSelector = state => state.image;
+
+export const filteredImageSelectory = createSelector(
+  [filterSelector, imageSelector]
+);
+
+export function filter(state = '', { type, payload }){
+  switch(type){
+    case APPLY_FILTER:
+      return payload;
+    case IMAGE_LOAD:
+      return '';
     default:
       return state;
   }
