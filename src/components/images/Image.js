@@ -9,6 +9,7 @@ class Image extends Component{
       <div>
         <h1>{title}</h1>
         <img src={url} alt={description}/>
+        <p>{description}</p>
         <button onClick={() => removeImage(id)}>Delete</button>
       </div>
     );
