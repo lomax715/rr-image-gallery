@@ -1,4 +1,4 @@
-import { image, IMAGE_LOAD, IMAGE_ADD, IMAGE_DELETE } from './reducers';
+import { image, ALBUM_LOAD, IMAGE_LOAD, IMAGE_ADD, IMAGE_DELETE } from './reducers';
 
 describe('image reducers', () => {
  
@@ -27,6 +27,11 @@ describe('image reducers', () => {
 
   it('loads image', () => {
     const state = image([], { type: IMAGE_LOAD, payload: imageToAdd });
+    expect(state).toEqual(imageToAdd);
+  });
+
+  it('loads albums', () => {
+    const state = image([imageToAdd], { type: ALBUM_LOAD, payload: '' });
     expect(state).toEqual(imageToAdd);
   });
 

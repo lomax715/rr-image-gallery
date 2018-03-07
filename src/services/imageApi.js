@@ -29,6 +29,11 @@ function load(albumId){
     .then(response => response.json());
 }
 
+function allAlbums(){
+  return fetch(`${URL}/albums`)
+    .then(response => response.json());
+}
+
 function add(imgObj){
   imgObj.album = albumId;
   return fetch(`${URL}/images`, {
@@ -50,5 +55,6 @@ function remove(imageId){
 export default {
   load,
   add,
-  remove
+  remove,
+  allAlbums
 };

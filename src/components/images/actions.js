@@ -1,5 +1,5 @@
 import imageApi from '../../services/imageApi';
-import { IMAGE_LOAD, IMAGE_ADD, IMAGE_DELETE } from './reducers';
+import { IMAGE_LOAD, IMAGE_ADD, IMAGE_DELETE, ALBUM_LOAD } from './reducers';
 
 export function loadImages(albumId){
   return {
@@ -22,3 +22,9 @@ export function removeImage(imageId){
   };
 }
 
+export function loadAlbums(){
+  return {
+    type: ALBUM_LOAD,
+    payload: imageApi.allAlbums()
+  };
+}
