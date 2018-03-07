@@ -11,16 +11,18 @@ export default class App extends Component{
   render(){
     return (
       <div>
-        <Header/>
-        <Loading/>
         <Router>
-          <main id="main">
-            <Switch>
-              <Route exact path="/" component={Albums} />
-              <Route path="/albums/:id" component={AlbumDetails}/>
-              <Redirect to="/"/>
-            </Switch>
-          </main>
+          <div>
+            <Header/>
+            <Loading/>
+            <main id="main">
+              <Switch>
+                <Route exact path="/" component={Albums} />
+                <Route path="/albums/:id" component={AlbumDetails}/>
+                <Redirect to="/"/>
+              </Switch>
+            </main>
+          </div>
         </Router>
       </div>
     );
