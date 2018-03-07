@@ -8,7 +8,7 @@ Enhance the Image Gallery to be able to choose from a list of albums
 _Feel free to substitute slightly different names for things if you already have good code_
 
 * `/` (home) displays a list of available albums (use server route `GET /api/albums`)
-* Use a `Link` so that clicking on an able changes the client route to `/albums/<id of album>`
+* Use a `Link` so that clicking on an album in the list changes the client route to `/albums/<id of album>`
 * `Routes`:
   * `exact path="/" component={Albums}`
   * `path="/albums/:id" component={Album}`
@@ -24,7 +24,9 @@ You are welcome to do one of the following in regards to editing:
 
 * Add a client side filter that matches if either title or description `includes` the filter text
 * Use a selector to apply the filter
-* Write a test for your selector
+* Choose one of the following:
+  * Write a test for your selector
+  * Use reselect to memoize your selector
 
 ## Rubric
 
